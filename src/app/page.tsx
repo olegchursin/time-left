@@ -85,40 +85,40 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
-      <main className="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-        <div className="flex flex-col gap-8">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Time Left Today</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-200 p-4">
+      <main className="w-full max-w-4xl p-4 sm:p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+        <div className="flex flex-col gap-4 sm:gap-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-4">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white text-center sm:text-left">Time Left Today</h1>
             <div className="flex gap-2">
               <button
                 onClick={() => handleThemeChange('light')}
-                className={`px-3 py-1 rounded ${theme === 'light' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
+                className={`px-2 sm:px-3 py-1 text-sm sm:text-base rounded ${theme === 'light' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
               >
                 Light
               </button>
               <button
                 onClick={() => handleThemeChange('dark')}
-                className={`px-3 py-1 rounded ${theme === 'dark' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
+                className={`px-2 sm:px-3 py-1 text-sm sm:text-base rounded ${theme === 'dark' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
               >
                 Dark
               </button>
               <button
                 onClick={() => handleThemeChange('system')}
-                className={`px-3 py-1 rounded ${theme === 'system' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
+                className={`px-2 sm:px-3 py-1 text-sm sm:text-base rounded ${theme === 'system' ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}
               >
                 System
               </button>
             </div>
           </div>
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {timeUnits.map((unit) => (
-              <div key={unit.label} className="flex flex-col items-center gap-2">
-                <div className="grid grid-cols-6 gap-1 p-4 bg-gray-50 dark:bg-gray-700 rounded w-64 h-64">
+              <div key={unit.label} className="flex-1 flex flex-col items-center gap-2">
+                <div className="grid grid-cols-6 gap-1 p-2 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded w-full aspect-square max-w-[16rem]">
                   {[...Array(unit.total)].map((_, i) => (
                     <div
                       key={i}
-                      className={`w-3 h-3 rounded-full flex items-center justify-center place-self-center ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
+                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full flex items-center justify-center place-self-center ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
                     />
                   ))}
                 </div>
