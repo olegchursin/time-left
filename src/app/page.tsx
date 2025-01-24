@@ -150,8 +150,8 @@ export default function Home() {
                     key={i}
                     className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 rounded-full flex items-center justify-center place-self-center ${
                       i < unit.remaining
-                        ? 'bg-blue-500 dark:bg-blue-400'
-                        : 'bg-gray-200 dark:bg-gray-600'
+                        ? 'bg-gray-800 dark:bg-gray-200'
+                        : 'bg-gray-200 dark:bg-gray-700'
                     }`}
                   />
                 ))}
