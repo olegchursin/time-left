@@ -143,7 +143,7 @@ export default function Home() {
             >
               <div
                 className="grid grid-cols-6 gap-1 p-2 bg-gray-100 dark:bg-gray-900 rounded w-full aspect-square"
-                style={{ maxWidth: 'min(16rem, calc(25vh - 2rem))' }}
+                style={{ maxWidth: 'min(20rem, 25vh)' }}
               >
                 {[...Array(unit.total)].map((_, i) => (
                   <div

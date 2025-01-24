@@ -8,13 +8,13 @@
   "theme_color": "#f9fafb",
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "https://ik.imagekit.io/olegchursin/time-left/icon-192x192_i_7Bq81S73.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "https://ik.imagekit.io/olegchursin/time-left/icon-512x512_B813TW401q.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
