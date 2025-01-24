@@ -114,11 +114,11 @@ export default function Home() {
           <div className="flex gap-8">
             {timeUnits.map((unit) => (
               <div key={unit.label} className="flex flex-col items-center gap-2">
-                <div className="grid grid-cols-6 gap-1 p-4 bg-gray-50 dark:bg-gray-700 rounded">
+                <div className="grid grid-cols-6 gap-1 p-4 bg-gray-50 dark:bg-gray-700 rounded w-64 h-64">
                   {[...Array(unit.total)].map((_, i) => (
                     <div
                       key={i}
-                      className={`w-3 h-3 rounded-full ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
+                      className={`w-3 h-3 rounded-full flex items-center justify-center place-self-center ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
                     />
                   ))}
                 </div>
