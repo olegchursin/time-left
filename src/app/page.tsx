@@ -85,8 +85,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-200 p-4">
-      <main className="w-full max-w-4xl p-4 sm:p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+    <div className="h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-200 p-2 sm:p-4">
+      <main className="w-full max-w-4xl p-2 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         <div className="flex flex-col gap-4 sm:gap-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-4">
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white text-center sm:text-left">Time Left Today</h1>
@@ -114,16 +114,16 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {timeUnits.map((unit) => (
               <div key={unit.label} className="flex-1 flex flex-col items-center gap-2">
-                <div className="grid grid-cols-6 gap-1 p-2 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded w-full aspect-square max-w-[16rem]">
+                <div className="grid grid-cols-6 gap-1 p-2 bg-gray-50 dark:bg-gray-700 rounded w-full aspect-square" style={{ maxWidth: 'min(16rem, calc(25vh - 2rem))' }}>
                   {[...Array(unit.total)].map((_, i) => (
                     <div
                       key={i}
-                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full flex items-center justify-center place-self-center ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
+                      className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 rounded-full flex items-center justify-center place-self-center ${i < unit.remaining ? 'bg-blue-500 dark:bg-blue-400' : 'bg-gray-200 dark:bg-gray-600'}`}
                     />
                   ))}
                 </div>
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                  {unit.label}
+                  {unit.remaining} {unit.label === 'hours' ? 'h' : unit.label === 'minutes' ? 'm' : 's'}
                 </span>
               </div>
             ))}
