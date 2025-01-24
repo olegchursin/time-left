@@ -112,7 +112,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-8">
-            {timeUnits.map((unit, index) => (
+            {timeUnits.map((unit) => (
               <div key={unit.label} className="flex flex-col items-center gap-2">
                 <div className="grid grid-cols-6 gap-1 p-4 bg-gray-50 dark:bg-gray-700 rounded">
                   {[...Array(unit.total)].map((_, i) => (
