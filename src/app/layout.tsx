@@ -19,11 +19,14 @@ export const metadata: Metadata = {
   description:
     'Track the remaining time in your day with a visual representation',
   manifest: '/manifest.json',
-  themeColor: '#f9fafb',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f9fafb' },
+    { media: '(prefers-color-scheme: dark)', color: '#030712' }
+  ],
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
+    statusBarStyle: 'black-translucent',
     title: 'Time Left Today'
   }
 };
@@ -123,7 +126,10 @@ export default function RootLayout({
           content="mstile-310x310.png"
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
